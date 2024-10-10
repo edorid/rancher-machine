@@ -1,9 +1,10 @@
 name: Release
 
-on:
-  push:
-    tags:
-      - '*'
+on: workflow_dispatch
+# on:
+#   push:
+#     tags:
+#       - '*'
 
 env:
   IMAGE: rancher/machine
@@ -25,7 +26,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version-file: 'go.mod'
+          go-version-file: "go.mod"
       - name: Setup Environment Variables
         run: |
           echo "GOOS=${{ matrix.os }}"     >> "$GITHUB_ENV"
