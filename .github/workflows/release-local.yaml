@@ -12,13 +12,12 @@ jobs:
   build-push-images:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      id-token: write # needed for the Vault authentication
+      contents: write
     strategy:
       fail-fast: true
       matrix:
         os: [linux]
-        arch: [amd64, arm64]
+        arch: [amd64]
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
