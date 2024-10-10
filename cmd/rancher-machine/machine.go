@@ -15,6 +15,7 @@ import (
 	"github.com/rancher/machine/drivers/generic"
 	"github.com/rancher/machine/drivers/google"
 	"github.com/rancher/machine/drivers/hyperv"
+	"github.com/rancher/machine/drivers/incus"
 	"github.com/rancher/machine/drivers/none"
 	"github.com/rancher/machine/drivers/noop"
 	"github.com/rancher/machine/drivers/openstack"
@@ -203,6 +204,8 @@ func runDriver(driverName string) {
 		plugin.RegisterDriver(google.NewDriver("", ""))
 	case "hyperv":
 		plugin.RegisterDriver(hyperv.NewDriver("", ""))
+	case "incus":
+		plugin.RegisterDriver(incus.NewDriver("", ""))
 	case "none":
 		plugin.RegisterDriver(none.NewDriver("", ""))
 	case "openstack":

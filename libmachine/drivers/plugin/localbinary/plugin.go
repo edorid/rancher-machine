@@ -26,6 +26,7 @@ var (
 		"generic",
 		"google",
 		"hyperv",
+		"incus",
 		"none",
 		"openstack",
 		"rackspace",
